@@ -6,11 +6,31 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppSharedVerihubsModule } from '../libs/verihubs/module';
+import { environment } from '../environments/environment';
+import { AppSharedVerihubsComponentsModule } from '../libs/verihubs/components/module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot({
+            mode: 'ios',
+            backButtonText: ''
+        }),
+        AppRoutingModule,
+
+        AppSharedVerihubsModule.forRoot(
+            {
+                appId: environment.verihubs.appId,
+            },
+        ),
+        AppSharedVerihubsComponentsModule,
+    ],
+    providers: [
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ],
+    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

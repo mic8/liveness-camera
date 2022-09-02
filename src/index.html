@@ -2,25 +2,110 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Ionic App</title>
+    <meta charset="utf-8"/>
+    <title>Ionic App</title>
 
-  <base href="/" />
+    <base href="/"/>
 
-  <meta name="color-scheme" content="light dark" />
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="color-scheme" content="light dark"/>
+    <meta name="viewport"
+          content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/icon/favicon.png"/>
 
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <script>
+        function onVerihubLoad() {
+            window.Verihubs = Verihubs;
+        }
+    </script>
+    <script src="https://verihubs.kemnaker.go.id/sdk/verihubs.js" onload="onVerihubLoad()"></script>
+
+    <style>
+        .app-d-none {
+            display: none !important;
+            background-color: transparent !important;
+        }
+
+        .liveness {
+            width: 650px;
+            height: auto;
+            max-width: 650px;
+            max-height: 450px;
+            overflow: hidden;
+            box-shadow: 0 0 500px 5000px rgba(0, 0, 0, 1);
+            z-index: 999999;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background: transparent;
+        }
+
+        .liveness .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+        }
+
+        .liveness:after {
+            content: '';
+            width: 50%;
+            height: 90%;
+            border: 2px dashed white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: 0 0 500px 5000px rgba(0, 0, 0, .2);
+            margin: auto;
+            border-radius: 100%;
+            background: transparent;
+        }
+
+        @media screen and (max-width: 670px) {
+            .liveness {
+                width: 90%;
+                height: auto;
+            }
+
+            .liveness:after {
+                height: 80%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .liveness {
+                width: 90%;
+                height: auto;
+            }
+
+            .liveness:after {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .liveness {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
-<body>
-  <app-root></app-root>
+<body class="relative" id="app-root">
+    <app-root></app-root>
 </body>
 
 </html>

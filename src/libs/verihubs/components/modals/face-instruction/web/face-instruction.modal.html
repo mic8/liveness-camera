@@ -1,0 +1,54 @@
+<div class="md:w-text-md p-5">
+    <h6>Instruksi swafoto</h6>
+    <div class="close-button-wrapper absolute top-2 right-2">
+        <ion-button mode="ios"
+                    color="transparent"
+                    class="shadow-none m-0"
+                    size="custom"
+                    (click)="close()"
+        >
+            <ion-icon name="close-outline" class="text-grey-600 w-10 h-10 hover:bg-grey-200 p-2"></ion-icon>
+        </ion-button>
+    </div>
+    <div class="pt-6">
+        <div class="text-grey-dark">
+            <ul class="pb-6 space-y space-y-4 list-disc text-sm pl-5">
+                <li>Wajahmu harus jelas, tidak tertutup/terpotong</li>
+                <div class="flex justify-center text-center space-x-4">
+                    <div>
+                        <img src="/assets/images/instructions/registration/selfie-file/true.jpg"
+                             alt="Selfie yang benar" class="bg-grey-100 rounded"
+                             style="width: 118px; height: 120px;">
+                        <div class="py-2.5 text-success space-x-2 text-xs font-semibold flex items-center justify-center">
+                            <ion-icon name="checkmark-outline" class="w-4 h-4 font-bold mr-1"></ion-icon>
+                            Benar
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/instructions/registration/selfie-file/false.jpg"
+                             alt="Selfie yang salah" class="bg-grey-100 rounded"
+                             style="width: 118px; height: 120px;">
+                        <div class="py-2.5 text-danger space-x-2 text-xs font-semibold flex items-center justify-center">
+                            <ion-icon name="close-outline" class="w-4 h-4 font-bold mr-1"></ion-icon>
+                            Salah
+                        </div>
+                    </div>
+                </div>
+                <li>Ambil swafoto dengan pencahayaan baik</li>
+                <li>Pastikan seluruh wajahmu masuk kedalam foto</li>
+                <li><b class="font-bold">Jangan</b> memakai atribut yang menutupi muka seperti <b class="font-bold">kacamata hitam</b> atau <b class="font-bold">masker</b></li>
+                <li>Ikuti <b class="font-bold">instruksi</b> yang diberikan di bagian atas</li>
+                <li>Proses ini membutuhkan perangkat dengan <b class="font-bold">kamera yang jernih</b>. Jika anda tidak yakin, sebaiknya gunakan <b class="font-bold">handphone</b> anda yang memiliki kamera yang memadai.</li>
+            </ul>
+        </div>
+        <div class="pt-10 text-right">
+            <ion-button mode="ios"
+                        [color]="color"
+                        (click)="intent()"
+                        class="text-sm font-bold"
+            >
+                <span>Mulai Ambil Foto</span>
+            </ion-button>
+        </div>
+    </div>
+</div>

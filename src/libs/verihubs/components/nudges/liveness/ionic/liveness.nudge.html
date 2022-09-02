@@ -1,0 +1,68 @@
+<ng-container *ngIf="liveness$ | async">
+    <div class="fixed top-0 left-0 right-0 m-auto text-center py-12" style="z-index: 9999999;">
+        <h6 class="text-blank font-semibold">{{ livenessInstruction$ | async }}</h6>
+    </div>
+    <ion-button color="blank"
+                shape="round"
+                size="custom"
+                class="m-0 h-10 w-10 fixed top-6 right-6 md:top-10 md:right-10"
+                style="z-index: 9999999;"
+                (click)="handleCloseLiveness()"
+    >
+        <ion-icon name="close-outline" class="h-5 w-5"></ion-icon>
+    </ion-button>
+    <div class="fixed liveness rounded-xl" #livenessWrapper
+         [class.remove-boundary]="(result$ | async)"
+    >
+        <ng-container *ngIf="livenessLoading$ | async else resultTpl">
+            <div class="loader flex items-center justify-center">
+                <ion-spinner name="crescent" class="w-12 h-12 text-blank"></ion-spinner>
+            </div>
+        </ng-container>
+        <ng-template #resultTpl>
+            <ng-container *ngIf="result$ | async as result">
+                <img [src]="result.safePath"
+                     class="object-cover w-full h-full"
+                />
+            </ng-container>
+        </ng-template>
+    </div>
+    <div class="fixed bottom-0 left-0 right-0 m-auto text-center p-4" style="z-index: 9999999;" *ngIf="openCamera$ | async">
+        <div class="flex w-full h-full justify-center items-center space-x-3">
+            <ion-button
+                mode="ios"
+                [color]="color"
+                class="h-10 text-sm font-bold"
+                (click)="handleContinue()"
+                [disabled]="openCameraLoading$ | async"
+            >
+                <ng-container *ngIf="openCameraLoading$ | async else continueBtnTpl">
+                    <ion-spinner name="crescent"></ion-spinner>
+                </ng-container>
+                <ng-template #continueBtnTpl>
+                    <span>Mulai Ambil Foto</span>
+                </ng-template>
+            </ion-button>
+        </div>
+    </div>
+    <div class="fixed bottom-0 left-0 right-0 m-auto text-center p-4" style="z-index: 9999999;" *ngIf="result$ | async">
+        <div class="flex w-full h-full justify-center items-center space-x-3">
+            <ion-button
+                mode="ios"
+                color="blank"
+                class="h-10 text-sm font-bold"
+                (click)="handleResetLiveness(); handleStart();"
+            >
+                <span>Ambil Foto Ulang</span>
+            </ion-button>
+            <ion-button
+                mode="ios"
+                [color]="color"
+                class="h-10 text-sm font-bold"
+                (click)="handleSubmit()"
+            >
+                <span>Simpan Foto</span>
+            </ion-button>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar color="blank" class="no-border px-4">
+        <ion-title>
+            Verifikasi Gagal
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button color="grey-dark" size="custom"
+                        class="no-shadow text-sm font-bold m-0 w-6 h-6"
+                        (click)="close()"
+            >
+                <ion-icon name="close-outline" class="w-6 h-6"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="pt-4 pb-48 px-4">
+        <div class="text-grey-dark">
+            <ul class="space-y space-y-4 list-disc pl-5 text-sm">
+                <li>Pastikan wajahmu diarahkan ke kamera, dan muncul di dalam lingkaran.</li>
+                <li>Wajahmu harus jelas, tidak tertutup/terpotong</li>
+                <li>Ambil swafoto dengan pencahayaan baik</li>
+                <li>Pastikan seluruh wajahmu masuk kedalam foto</li>
+                <li><b class="font-bold">Jangan</b> memakai atribut yang menutupi muka seperti <b class="font-bold">kacamata hitam</b> atau <b class="font-bold">masker</b></li>
+                <li>Ikuti <b class="font-bold">instruksi</b> yang diberikan di bagian atas</li>
+                <li>Proses ini membutuhkan perangkat dengan <b class="font-bold">kamera yang jernih</b>. Jika anda tidak yakin, sebaiknya gunakan <b class="font-bold">handphone</b> anda yang memiliki kamera yang memadai.</li>
+                <li>Jika masalah masih terus terjadi, <a href="https://bantuan.kemnaker.go.id/" target="_blank" class="text-{{ color }} font-bold">Hubungi kami</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div slot="fixed" class="bottom-0 w-full bg-blank"
+         style="box-shadow: 0px -1px 1px rgba(20, 20, 20, 0.02), 0px -2px 8px rgba(20, 20, 20, 0.04);">
+        <div class="p-4">
+            <ion-button [color]="color"
+                        expand="block"
+                        class="h-11 font-bold text-sm"
+                        (click)="intent()"
+            >
+                Ulangi Verifikasi
+            </ion-button>
+        </div>
+    </div>
+</ion-content>

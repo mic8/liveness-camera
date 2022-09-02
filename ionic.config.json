@@ -1,5 +1,7 @@
 {
   "name": "liveness-camera",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

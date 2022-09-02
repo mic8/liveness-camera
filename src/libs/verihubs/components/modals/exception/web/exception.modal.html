@@ -1,0 +1,39 @@
+<div class="md:w-text-md p-5">
+    <h6 class="flex items-center space-x-2">
+        <ion-icon name="alert-circle-outline" class="w-5 h-5 text-accent-red"></ion-icon>
+        <span>Verifikasi Gagal</span>
+    </h6>
+    <div class="close-button-wrapper absolute top-2 right-2">
+        <ion-button mode="ios"
+                    color="transparent"
+                    class="shadow-none m-0"
+                    size="custom"
+                    (click)="close()"
+        >
+            <ion-icon name="close-outline" class="text-grey-600 w-10 h-10 hover:bg-grey-200 p-2"></ion-icon>
+        </ion-button>
+    </div>
+    <div class="pt-6">
+        <div class="text-grey-dark">
+            <ul class="pb-6 space-y space-y-4 list-disc pl-5 text-sm">
+                <li>Pastikan wajahmu diarahkan ke kamera, dan muncul di dalam lingkaran.</li>
+                <li>Wajahmu harus jelas, tidak tertutup/terpotong</li>
+                <li>Ambil swafoto dengan pencahayaan baik</li>
+                <li>Pastikan seluruh wajahmu masuk kedalam foto</li>
+                <li><b class="font-bold">Jangan</b> memakai atribut yang menutupi muka seperti <b class="font-bold">kacamata hitam</b> atau <b class="font-bold">masker</b></li>
+                <li>Ikuti <b class="font-bold">instruksi</b> yang diberikan di bagian atas</li>
+                <li>Proses ini membutuhkan perangkat dengan <b class="font-bold">kamera yang jernih</b>. Jika anda tidak yakin, sebaiknya gunakan <b class="font-bold">handphone</b> anda yang memiliki kamera yang memadai.</li>
+                <li>Jika masalah masih terus terjadi, <a href="https://bantuan.kemnaker.go.id/" target="_blank" class="text-{{ color }} font-bold">Hubungi kami</a></li>
+            </ul>
+        </div>
+        <div class="pt-10 text-right">
+            <ion-button mode="ios"
+                        [color]="color"
+                        (click)="intent()"
+                        class="text-sm font-bold"
+            >
+                <span>Ulangi Verifikasi</span>
+            </ion-button>
+        </div>
+    </div>
+</div>
